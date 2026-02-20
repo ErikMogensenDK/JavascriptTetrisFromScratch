@@ -3,10 +3,10 @@ import {not} from './not.js'
 import {or} from './or.js'
 
 export function xor(aBit, bBit) {
-	const tmp1 = and(not(aBit), bBit)
-	const tmp2 = and(not(bBit), aBit)
+	const both = and(aBit, bBit)
+	const either = or(aBit,bBit)
 
-	return(or(tmp1,tmp2))
+	return(and(either, not(both)))
 }
 
 export default xor;
