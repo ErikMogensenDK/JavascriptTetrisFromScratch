@@ -1,4 +1,4 @@
-import or from '../../logic-gates/or.js'
+import {or} from '../../logic-gates/or.js'
 
 function testOr(aBit, bBit, expectedResult){
 	test(`${aBit} and ${bBit} should return ${expectedResult}`, () =>

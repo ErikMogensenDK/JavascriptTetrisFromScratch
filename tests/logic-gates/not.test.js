@@ -1,4 +1,4 @@
-import not from '../../logic-gates/not.js'
+import {not} from '../../logic-gates/not.js'
 
 function testNot(aBit, expectedResult) {
   test(`${aBit} should return ${expectedResult}`, () =>

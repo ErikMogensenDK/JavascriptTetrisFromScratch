@@ -7,5 +7,3 @@ export function xor(aBit, bBit) {
 	const either = or(aBit,bBit)
 	return(and(either, not(both)))
 }
-
-export default xor;
