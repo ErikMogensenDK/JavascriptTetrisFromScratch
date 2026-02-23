@@ -1,5 +1,5 @@
-import {nand} from './nand.js'
-import {not} from './not.js'
-export function and(aBit, bBit){
+import { nand } from './nand.js'
+import { not } from './not.js'
+export function and(aBit, bBit) {
 	return not(nand(aBit, bBit))
 }
