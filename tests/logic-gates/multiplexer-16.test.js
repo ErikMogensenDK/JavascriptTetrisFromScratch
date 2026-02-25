@@ -1,15 +1,16 @@
 import {multiplexer16} from '../../logic-gates/multiplexer-16.js'
 
 function testMultiplexer16(inputA, inputB, selector, expRes) {
-	test(`TestMultiplexer16 with inputA:${inputA}, inputB:${inputB}, selector:${selector} should give:{expRes}`, () => (
+	test(`TestMultiplexer16 with inputA:${inputA}, inputB:${inputB}, selector:${selector} should give:${expRes}`, () => (
 		expect(multiplexer16(inputA, inputB, selector)).toStrictEqual(expRes))
 	)
 }
 
-const inputA =   [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0];
-const inputB =   [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0];
-const selector = [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1];
-const expOut =   [1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0];
+const inputA = Array(16).fill(0)
+const inputB = Array(16).fill(1)
+const selectA = 0
+const selectB = 1
 
-testMultiplexer16(inputA, inputB, selector, expOut);
+testMultiplexer16(inputA, inputB, selectA, inputA);
+testMultiplexer16(inputA, inputB, selectB, inputB);
 
