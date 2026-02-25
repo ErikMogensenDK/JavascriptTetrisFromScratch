@@ -1,4 +1,4 @@
-import {or16} from '../../logic-gates/or16.js'
+import {or16} from '../../logic-gates/or-16.js'
 
 function testOr16(inputA, inputB, expResult){
 	test(`testOr16 with inputA:${inputA}, and inputB:${inputB}, should give ${expResult}`, () =>

@@ -1,4 +1,4 @@
-import {multiplexer16} from '../../logic-gates/multiplexer16.js'
+import {multiplexer16} from '../../logic-gates/multiplexer-16.js'
 
 function testMultiplexer16(inputA, inputB, selector, expRes) {
 	test(`TestMultiplexer16 with inputA:${inputA}, inputB:${inputB}, selector:${selector} should give:{expRes}`, () => (

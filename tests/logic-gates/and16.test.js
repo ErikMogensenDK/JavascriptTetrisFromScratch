@@ -1,4 +1,4 @@
-import {and16} from '../../logic-gates/and16.js'
+import {and16} from '../../logic-gates/and-16.js'
 
 function testAnd16(inputA, inputB, expectedOutput){
 	test(`testAnd16 with input ${inputA}, ${inputB}, should give ${expectedOutput}`, () =>
