@@ -8,14 +8,19 @@ function testMultiplexer4Way(inA, inB, inC, inD, selector, expOutput) {
 	)
 }
 
-// 4 distinct selectors
+// 4 distinct arrays 
 const a = Array(16).fill(0);                        
 const b = Array(16).fill(1);                        
 const c = [0,1,0,1,0,1,0,1, 0,1,0,1,0,1,0,1];       
 const d = [1,0,1,0,1,0,1,0, 1,0,1,0,1,0,1,0];       
 
+const e = [0,0,0,0,0,0,0,0, 1,1,1,1,1,1,1,1]
+const f = [1,1,1,1,1,1,1,1, 0,0,0,0,0,0,0,0]
+const g = [0,0,1,1,0,0,1,1, 0,0,1,1,0,0,1,1]
+const h = [1,1,0,0,1,1,0,0, 1,1,0,0,1,1,0,0]
+
 // array selection bits seem reversed, due to the aBit being the bit at the 0th index
-// rather than being the bit, which would naturally be to the rightmost when read
+// rather than being the bit, which would naturally be to the rightmost when read (LSB)
 selectA = [0,0]; 
 selectB = [1,0];
 selectC = [0,1];
