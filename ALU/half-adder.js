@@ -1,8 +1,8 @@
-import { and } from "../logic-gates/and"
-import { xor } from "../logic-gates/xor" 
+import { and } from "../logic-gates/and.js"
+import { xor } from "../logic-gates/xor.js" 
 
 export function halfAdder(aBit, bBit){
-	const carry = xor(aBit, bBit)
-	const sum = and(aBit, bBit)
-	return [sum, carry]
+	const sum = xor(aBit, bBit)
+	const carry = and(aBit, bBit)
+	return [carry, sum]
 }
