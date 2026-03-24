@@ -3,18 +3,20 @@ import { not16 } from "../logic-gates/not-16"
 import { add16 } from "../alu/add16"
 import { and16 } from "../logic-gates/and-16"
 
+const ZERO_ARRAY = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 export function alu(x16, y16, zx, nx, zy, ny, f, no){
-	const zeroInput = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	// Note: In hardware, all paths compute in parallel via mux selection.
+	// For efficiency, we could conditionally compute, but this preserves the ALU's combinatorial nature.
 
-	const potentiallyZeroedX16 = mux16(x16, zeroInput, zx);
-	const potentiallyZeroedY16 = mux16(y16, zeroInput, zy);
+	const zeroedX = mux16(x16, ZERO_ARRAY, zx);
+	const zeroedY = mux16(y16, ZERO_ARRAY, zy);
 
-	const notX16Result = not16(potentiallyZeroedX16);
-	const notOrZeroX = mux16(potentiallyZeroedX16, notX16Result, nx);
+	const notZeroedX = not16(zeroedX);
+	const notOrZeroX = mux16(zeroedX, notZeroedX, nx);
 
-	const notY16Result = not16(potentiallyZeroedY16);
-	const notOrZeroY = mux16(potentiallyZeroedY16, notY16Result, ny);
+	const notZeroedY16 = not16(zeroedY);
+	const notOrZeroY = mux16(zeroedY, notZeroedY16, ny);
 
 
 	const xPlusY = add16(notOrZeroX, notOrZeroY);
