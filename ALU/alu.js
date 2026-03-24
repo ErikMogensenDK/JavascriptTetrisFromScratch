@@ -27,4 +27,3 @@ export function alu(x16, y16, zx, nx, zy, ny, f, no){
 
 	return finalResult;
 }
-// something to set the 16 bit array to 0
